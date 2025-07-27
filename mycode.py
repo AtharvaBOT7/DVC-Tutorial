@@ -13,6 +13,11 @@ new_row= [
 ]
 df = pd.concat([df, pd.DataFrame(new_row)], ignore_index=True)
 
+new_row2= [
+    {'Name': 'Ravi', 'Age': 58, 'City': 'San Jose'}
+]
+df = pd.concat([df, pd.DataFrame(new_row2)], ignore_index=True)
+
 
 data_dir = 'data'
 
