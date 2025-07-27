@@ -7,11 +7,13 @@
     dvc remote add -d myremote <folder-location>
 7. Now we have do dvc add /<data-location>. This simply means that we are telling dvc that you are now responsible to track the changes in the 
     data folder that we are going to make
+8. When we do dvc commit and dvc push, we can store the data along with the unique id for that data in the location that we had 
+   initialised dvc with. For each push, dvc pushes 2 files, one with the unique identifier and another with the actual data.
 
 
 
 ***IMP*** when we set the data location for dvc using remove, we can also give S3 link in folder location and it will set that  
-            location as the location of the data i.e. data source. And when we do dvc add <data-location> it understands that it 
+            location as the location of the data i.e. where it has to store the data. And when we do dvc add <data-location> it understands that it 
             has to keep a track of the data which is going to be changed inside that location.
 
 
@@ -26,3 +28,5 @@ pip install dvc
 dvc init 
 dvc remote add -d myremote <folder-location>
 dvc add /data
+dvc commit 
+dvc push
