@@ -1,3 +1,28 @@
 1. Create a git repo and clone it in local.
 2. Create a mycode.py file and add some code to it. (This will save a CSV file to a new "Data" folder).
-3. 
+3. To install DVC in your local machine run pip install dvc.
+4. dvc init creates .dvcignore file and .dvc folder.
+5. We created a new directory and we assume that for this tutorial our data is stored or data comes from that folder.
+6. Next just like we have to set a location for our git in github we have to set a location for dvc as well, for that we use
+    dvc remote add -d myremote <folder-location>
+7. Now we have do dvc add /<data-location>. This simply means that we are telling dvc that you are now responsible to track the changes in the 
+    data folder that we are going to make
+
+
+
+***IMP*** when we set the data location for dvc using remove, we can also give S3 link in folder location and it will set that  
+            location as the location of the data i.e. data source. And when we do dvc add <data-location> it understands that it 
+            has to keep a track of the data which is going to be changed inside that location.
+
+
+***IMP*** If we have already uploaded or asked git to track changes in the data folder or location then it is not possible for dvc
+          to keep a track of the changes. We can only track the data which is not tracked by git by using dvc.
+
+
+##########################################################################################################
+DVC - flow
+
+pip install dvc
+dvc init 
+dvc remote add -d myremote <folder-location>
+dvc add /data
