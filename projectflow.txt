@@ -9,7 +9,8 @@
     data folder that we are going to make
 8. When we do dvc commit and dvc push, we can store the data along with the unique id for that data in the location that we had 
    initialised dvc with. For each push, dvc pushes 2 files, one with the unique identifier and another with the actual data.
-
+9. Now we will make changes to the mycode.py file to add a few rows in the data and then check if everything works and dvc actually
+   tracks our data using dvc status.
 
 
 ***IMP*** when we set the data location for dvc using remove, we can also give S3 link in folder location and it will set that  
@@ -21,6 +22,10 @@
           to keep a track of the changes. We can only track the data which is not tracked by git by using dvc.
 
 
+***IMP*** In our case as we have the source data folder on our local, git will keep a track of it but this data should not be on our 
+          local machine as the data will be huge and should be on remote servers.
+
+
 ##########################################################################################################
 DVC - flow
 
@@ -28,5 +33,7 @@ pip install dvc
 dvc init 
 dvc remote add -d myremote <folder-location>
 dvc add /data
+dvc status
 dvc commit 
 dvc push
+dvc status
