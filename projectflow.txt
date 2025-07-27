@@ -37,3 +37,8 @@ dvc status
 dvc commit 
 dvc push
 dvc status
+
+***IMP** If we want to rollback to some previous data then what we do is we run git log --oneline, copy the sha id and then 
+         run git checkout <sha_id> this will take us back to the version of code as expected, and here if we run dvc status, then   
+         dvc will say that there are few modified files, then to get the data which was in accordance with that code version, we
+         run dvc pull.
